@@ -1,0 +1,42 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.pictime.testing</groupId>
+	<version>1.5.0</version>
+	<artifactId>dataservice-test-common</artifactId>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <serenity-cucumber.version>1.6.10</serenity-cucumber.version>
+		<nexus.repositories.url>https://nexus.dev.os.pictime:444/content/repositories</nexus.repositories.url>
+		<releaseRepositoryId>pictimeReleases</releaseRepositoryId>
+		<snapshotRepositoryId>pictimeSnapshots</snapshotRepositoryId>
+    </properties>
+	<distributionManagement>
+		<!-- Definition des referentiels maven ou deployer le projet -->
+		<!-- use the following if you're not using a snapshot version. -->
+		<repository>
+			<id>${releaseRepositoryId}</id>
+			<name>http nexus ${releaseRepositoryId}</name>
+			<url>${nexus.repositories.url}/releases/</url>
+		</repository>
+		<!-- use the following if you ARE using a snapshot version. -->
+		<snapshotRepository>
+			<id>${snapshotRepositoryId}</id>
+			<name>http nexus ${snapshotRepositoryId}</name>
+			<url>${nexus.repositories.url}/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+	<dependencies>
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-cucumber</artifactId>
+            <version>${serenity-cucumber.version}</version>
+        </dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>1.10.19</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>

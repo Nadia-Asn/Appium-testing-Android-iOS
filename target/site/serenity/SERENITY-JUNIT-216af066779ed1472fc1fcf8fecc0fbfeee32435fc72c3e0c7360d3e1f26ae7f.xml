@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="0" name="Achat d'un produit via l'application kiabi" skipped="0" tests="1" time="180.38" timestamp="2018-05-24T16:16:57.994+02:00[Europe/Paris]"><testcase name="Passer une commande en livraison a domicile paiement carte bancaire"><error message="The following error occurred: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id=&quot;stepSummary&quot;] (tried for 20 second(s) with 50 milliseconds interval)&#10;Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'&#10;System info: host: 'lilwesmac013.lild01.pictime.fr', ip: 'fe80:0:0:0:87d:3c73:d9f6:e877%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.4', java.version: '1.8.0_171'&#10;Driver info: driver.version: unknown" type="org.openqa.selenium.TimeoutException">The following error occurred: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id="stepSummary"] (tried for 20 second(s) with 50 milliseconds interval)
+Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
+System info: host: 'lilwesmac013.lild01.pictime.fr', ip: 'fe80:0:0:0:87d:3c73:d9f6:e877%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.4', java.version: '1.8.0_171'
+Driver info: driver.version: unknown</error><system-err>The following error occurred: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id="stepSummary"] (tried for 20 second(s) with 50 milliseconds interval)
+Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
+System info: host: 'lilwesmac013.lild01.pictime.fr', ip: 'fe80:0:0:0:87d:3c73:d9f6:e877%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.4', java.version: '1.8.0_171'
+Driver info: driver.version: unknown
+com.pictime.test.pages.commande.CommandPageAndroid.checkCommandConfirmation(CommandPageAndroid.java:86)
+com.pictime.test.glue.steps.commande.CommandeSteps.checkCommandConfirmation(CommandeSteps.java:73)
+com.pictime.test.glue.steps.commande.CommandeFeature.la_confirmation_de_ma_commande_est_affichee(CommandeFeature.java:89)
+cucumber.runner.Runner.runPickle(Runner.java:80)
+</system-err></testcase></testsuite>
