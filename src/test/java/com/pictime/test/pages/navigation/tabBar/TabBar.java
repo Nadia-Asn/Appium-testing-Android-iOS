@@ -7,7 +7,6 @@ import net.serenitybdd.core.pages.PageObject;
  * Created by ahassounin
  *
  */
-
 public abstract class TabBar extends PageObject {
 
     /**

@@ -6,14 +6,17 @@ import io.appium.java_client.ios.IOSDriver;
 import net.thucydides.core.webdriver.WebDriverFacade;
 import org.openqa.selenium.By;
 
-public class RightMenuPageIOS extends  RightMenuPage{
+/**
+ * Created by ahassounin
+ */
+public abstract class RightMenuPageIOS extends  RightMenuPage{
 
 
-/*    @Override
-    public void connectMe() {
+    @Override
+    public void meConnecter() {
         IOSDriver driver = (IOSDriver) ((WebDriverFacade)getDriver()).getProxiedDriver();
         TouchAction action = new TouchAction(driver);
         waitABit(1000);
         action.tap(driver.findElement(By.id("Me connecter"))).perform();
-    }*/
+    }
 }

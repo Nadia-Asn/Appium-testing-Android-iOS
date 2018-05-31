@@ -2,6 +2,9 @@ package com.pictime.test.pages.commande.payment;
 
 import net.serenitybdd.core.pages.PageObject;
 
+/**
+ * Created by ahassounin
+ */
 public abstract class Payment extends PageObject {
     public abstract void commandOnLinePayment();
 

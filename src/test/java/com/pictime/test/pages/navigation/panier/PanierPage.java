@@ -2,6 +2,9 @@ package com.pictime.test.pages.navigation.panier;
 
 import net.serenitybdd.core.pages.PageObject;
 
+/**
+ * Created by ahassounin
+ */
 public abstract class PanierPage extends PageObject{
 
 	public abstract void consulterMonPanier();

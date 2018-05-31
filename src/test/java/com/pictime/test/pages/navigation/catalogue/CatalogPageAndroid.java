@@ -13,9 +13,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-
 /**
- * Created by elalailii on 20/05/2016.
+ * Created by ahassounin
  */
 public class CatalogPageAndroid extends CatalogPage {
 
@@ -24,22 +23,10 @@ public class CatalogPageAndroid extends CatalogPage {
     public void visualizeProductDetails() {
 
         AndroidDriver driver = (AndroidDriver) ((WebDriverFacade)getDriver()).getProxiedDriver();
-
-        Set<String> contexts = driver.getContextHandles();
-/* A remettre si le changement de contexte ne fonctionne pas
-        for (String context : contexts) {
-            System.out.println("All contexts :" + contexts);
-            if (!context.equals("NATIVE_APP")) {
-                System.out.println("WEBVIEW context=> " + contexts);
-            }
-        }
-        System.out.println("execute context switch successfully!!!  "
-                + contexts.toArray()[1]);
-*/
         Contexte.switchToWebview(driver);
         System.out.println("url actuel => " + driver.getCurrentUrl());
         withTimeoutOf(20, TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@name=\"urlProduct\"])[1]")));
-        driver.findElement(By.xpath("(//*[@name=\"urlProduct\"])[1]")).click();
+        driver.findElement(By.xpath("(//*[@name=\"urlProduct\"])[3]")).click();
     }
 
 	@Override

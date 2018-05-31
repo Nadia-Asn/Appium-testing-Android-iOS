@@ -10,7 +10,7 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 import org.junit.runner.RunWith;
 
 //@RunWith(CucumberWithSerenity.class)
-//@CucumberOptions(features = "src/test/resources/features/seConnecter.feature", glue = { "com.pictime.test.glue" }, tags = {"@connection"})
+@CucumberOptions(features = "src/test/resources/features/seConnecter.feature", glue = { "com.pictime.test.glue" }, tags = {"@connection"})
 public class LoginRunner {
 
 }

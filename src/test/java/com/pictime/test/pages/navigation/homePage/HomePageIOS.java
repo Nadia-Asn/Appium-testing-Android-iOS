@@ -19,6 +19,7 @@ public class HomePageIOS extends HomePage{
 	public void clickNextTuto() {
 		IOSDriver driver = (IOSDriver) ((WebDriverFacade)getDriver()).getProxiedDriver();
 		TouchAction action = new TouchAction(driver);
+		driver.manage().timeouts().pageLoadTimeout(1000, TimeUnit.SECONDS);
 		waitABit(2000);
 		driver.switchTo().alert().accept();
 		waitABit(2000);

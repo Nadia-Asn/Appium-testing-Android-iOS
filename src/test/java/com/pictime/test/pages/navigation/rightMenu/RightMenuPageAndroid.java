@@ -5,12 +5,15 @@ import io.appium.java_client.android.AndroidDriver;
 import net.thucydides.core.webdriver.WebDriverFacade;
 import org.openqa.selenium.By;
 
+/**
+ * Created by ahassounin
+ */
 public class RightMenuPageAndroid extends RightMenuPage {
 
-    /*@Override
+    @Override
     public void meConnecter() {
         AndroidDriver driver = (AndroidDriver) ((WebDriverFacade)getDriver()).getProxiedDriver();
         TouchAction action = new TouchAction(driver);
         action.tap(driver.findElement(By.id("com.pictime.kiabi.activity:id/myaccount_welcome"))).perform().waitAction();
-    }*/
+    }
 }

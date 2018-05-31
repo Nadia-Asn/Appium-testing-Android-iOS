@@ -23,13 +23,14 @@ public class TabBarAndroid extends TabBar {
 		AndroidDriver driver = (AndroidDriver) ((WebDriverFacade)getDriver()).getProxiedDriver();
 		TouchAction action = new TouchAction(driver);
 		WebElement we = driver.findElement(By.id("com.pictime.kiabi.activity:id/bottom_navigation_search"));
-		action.tap(driver.findElement(By.id("com.pictime.kiabi.activity:id/bottom_navigation_search"))).perform(); 
+		we.click();
 		driver.getKeyboard().sendKeys(nomProduit);
 	}
 
 	@Override
 	public void chooseProductInSuggestion() {
 		AndroidDriver driver = (AndroidDriver) ((WebDriverFacade)getDriver()).getProxiedDriver();
+		waitABit(2000);
 		List<WebElement> el1 = driver.findElements(By.id("com.pictime.kiabi.activity:id/suggestion_item"));
 		el1.get(2).click();
 	}
@@ -39,7 +40,8 @@ public class TabBarAndroid extends TabBar {
 		AndroidDriver driver = (AndroidDriver) ((WebDriverFacade)getDriver()).getProxiedDriver();
 		TouchAction action = new TouchAction(driver);
 		waitABit(1000);
-		action.tap(driver.findElement(By.id("com.pictime.kiabi.activity:id/bottom_navigation_account"))).perform().waitAction();
+		driver.findElement(By.id("com.pictime.kiabi.activity:id/bottom_navigation_account")).click();
+		waitABit(1000);
 
 	}
 

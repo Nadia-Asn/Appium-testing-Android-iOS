@@ -24,9 +24,6 @@ public class ListeProduitPageAndroid extends ListeProduitPage{
 		String xpath = "*//img[contains(@title,'"+produit+"')]";
         withTimeoutOf(50, TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
 		driver.findElementByXPath(xpath).click();
-		
-		//System.out.println(driver.findElementsByXPath("//*[@id=\"listarticles\"]/div[1]/div[1]/div[1]/div/div[8]/span[1]"));	
-		//final WebElement w = driver.findElement(By.xpath("*//*[@id=\"listarticles\"]/ul/li[1]/div/span/span[1]/img"));
 		Contexte.switchToNative(driver);
 	}
 	

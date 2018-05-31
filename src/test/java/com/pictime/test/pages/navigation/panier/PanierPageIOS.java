@@ -15,6 +15,9 @@ import net.thucydides.core.webdriver.WebDriverFacade;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Created by ahassounin
+ */
 public class PanierPageIOS extends PanierPage{
 
 	private static String productName;

@@ -7,6 +7,9 @@ import net.thucydides.core.annotations.Steps;
 
 import java.util.Map;
 
+/**
+ * Definit les steps fonctionnels de la gestion de création d'un nouveau compte client et le login
+ */
 public class CompteClientFeature {
 
     @Steps

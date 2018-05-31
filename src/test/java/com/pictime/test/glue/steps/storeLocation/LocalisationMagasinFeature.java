@@ -4,13 +4,13 @@ import cucumber.api.java.fr.Alors;
 import cucumber.api.java.fr.Lorsque;
 import net.thucydides.core.annotations.Steps;
 
+/**
+ * Definit les steps fonctionnels de la localisation des stores Kiabi
+ */
 public class LocalisationMagasinFeature {
 
     @Steps
     StoreLocationSteps storeLocationSteps;
-
-
-
 
     @Lorsque("^je tape \"([^\"]*)\" comme ville$")
     public void je_tape_comme_ville(String arg1) throws Exception {

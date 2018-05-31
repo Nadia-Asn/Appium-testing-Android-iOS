@@ -2,6 +2,9 @@ package com.pictime.test.pages.commande;
 
 import net.serenitybdd.core.pages.PageObject;
 
+/**
+ * Created by ahassounin
+ */
 public abstract class CommandPage extends PageObject {
     public abstract void goToCommand();
 

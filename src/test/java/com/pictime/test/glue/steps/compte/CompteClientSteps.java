@@ -39,7 +39,6 @@ public class CompteClientSteps extends TechnicalSteps {
     public void validateAccountCreation() { getPage(AccountCreationPage.class).validateAccountCreation(); }
 
     @Step
-
     public void assertAccountCreation() {
         getPage(AccountCreationPage.class).assertCreationAccountOK();
     }

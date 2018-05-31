@@ -6,10 +6,10 @@ import cucumber.api.java.fr.Soit;
 import net.thucydides.core.annotations.Steps;
 
 /**
- * Definit les steps fonctionnels du script
+ * Definit les steps fonctionnels de la gestion du panier
  */
 
-public class PanierFixture {
+public class PanierFeature {
 
     @Steps
     PanierSteps PanierSteps;

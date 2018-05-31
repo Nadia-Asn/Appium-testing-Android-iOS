@@ -13,10 +13,9 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-
-/**
- * Created by zeggaim on 20/05/2016.
- */
+    /**
+     * Created by ahassounin
+     */
 public class CatalogPageIOS extends CatalogPage{
 
 	@Override

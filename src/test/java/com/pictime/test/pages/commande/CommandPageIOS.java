@@ -8,6 +8,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Created by ahassounin
+ */
 public class CommandPageIOS extends CommandPage {
     @Override
     public void goToCommand() {
@@ -18,33 +21,31 @@ public class CommandPageIOS extends CommandPage {
 
     @Override
     public void commandWithoutLogin() {
-        IOSDriver driver = (IOSDriver) ((WebDriverFacade)getDriver()).getProxiedDriver();
         withTimeoutOf(20, TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"continueWithoutLogin\"]")));
-        driver.findElement(By.xpath("//*[@id=\"continueWithoutLogin\"]")).click();
+        getDriver().findElement(By.xpath("//*[@id=\"continueWithoutLogin\"]")).click();
     }
 
     @Override
     public void fillContactInformation(String fName, String lName, String email, String tel) {
-        IOSDriver driver = (IOSDriver) ((WebDriverFacade)getDriver()).getProxiedDriver();
 
         withTimeoutOf(20,TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"firstName\"]")));
 
-        WebElement firstName = driver.findElement(By.xpath("//*[@id=\"firstName\"]"));
+        WebElement firstName = getDriver().findElement(By.xpath("//*[@id=\"firstName\"]"));
         firstName.click();
         firstName.clear();
         firstName.sendKeys(fName);
 
-        WebElement lastName = driver.findElement(By.xpath("//*[@id=\"lastName\"]"));
+        WebElement lastName = getDriver().findElement(By.xpath("//*[@id=\"lastName\"]"));
         lastName.click();
         lastName.clear();
         lastName.sendKeys(lName);
 
-        WebElement emailMap = driver.findElement(By.xpath("//*[contains(@id,'emailMap')]"));
+        WebElement emailMap = getDriver().findElement(By.xpath("//*[contains(@id,'emailMap')]"));
         emailMap.click();
         emailMap.clear();
         emailMap.sendKeys(email);
 
-        WebElement mobilePhoneNumber = driver.findElement(By.xpath("//*[@id=\"mobilePhoneNumber\"]"));
+        WebElement mobilePhoneNumber = getDriver().findElement(By.xpath("//*[@id=\"mobilePhoneNumber\"]"));
         mobilePhoneNumber.click();
         mobilePhoneNumber.clear();
         mobilePhoneNumber.sendKeys(tel);
@@ -52,25 +53,22 @@ public class CommandPageIOS extends CommandPage {
 
     @Override
     public void validateContactInformation() {
-        IOSDriver driver = (IOSDriver) ((WebDriverFacade)getDriver()).getProxiedDriver();
         withTimeoutOf(20,TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"informationsValidate\"]")));
-        WebElement dontWantFidCard = driver.findElement(By.xpath("//*[@id=\"informationsValidate\"]"));
+        WebElement dontWantFidCard = getDriver().findElement(By.xpath("//*[@id=\"informationsValidate\"]"));
         dontWantFidCard.click();
     }
 
     @Override
     public void commandWithoutFidelity() {
-        IOSDriver driver = (IOSDriver) ((WebDriverFacade)getDriver()).getProxiedDriver();
         withTimeoutOf(20,TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"dontWantFidCard\"]")));
-        WebElement informationsValidate = driver.findElement(By.xpath("//*[@id=\"dontWantFidCard\"]"));
+        WebElement informationsValidate = getDriver().findElement(By.xpath("//*[@id=\"dontWantFidCard\"]"));
         informationsValidate.click();
     }
 
     @Override
     public void validateFidelity() {
-        IOSDriver driver = (IOSDriver) ((WebDriverFacade)getDriver()).getProxiedDriver();
         withTimeoutOf(20,TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"benefitsValidate\"]")));
-        WebElement benefitsValidate = driver.findElement(By.xpath("//*[@id=\"benefitsValidate\"]"));
+        WebElement benefitsValidate = getDriver().findElement(By.xpath("//*[@id=\"benefitsValidate\"]"));
         benefitsValidate.click();
     }
 

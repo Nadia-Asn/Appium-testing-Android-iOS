@@ -2,6 +2,9 @@ package com.pictime.test.pages.compte.accoutCreation;
 
 import net.serenitybdd.core.pages.PageObject;
 
+/**
+ * Created by ahassounin
+ */
 public abstract class AccountCreationPage extends PageObject {
     public abstract void createAccount();
 

@@ -23,7 +23,7 @@ public class CommandeSteps extends TechnicalSteps {
     }
 
     public void fillDeliveryAddress(String rue, String cp, String ville) {
-        getPage(Delivery.class).fillDeliveryAddress(rue,cp,ville);
+        getPage(Delivery.class).fillDeliveryAddress(rue, cp, ville);
     }
 
     public void validateDeliveryAddress() {
@@ -32,7 +32,7 @@ public class CommandeSteps extends TechnicalSteps {
     }
 
     public void fillContactInformation(String fName, String lName, String email, String tel) {
-        getPage(CommandPage.class).fillContactInformation(fName,lName,email,tel);
+        getPage(CommandPage.class).fillContactInformation(fName, lName, email, tel);
     }
 
     public void validateContactInformation() {

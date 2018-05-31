@@ -9,6 +9,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Created by ahassounin
+ */
 public class PaymentAndroid extends Payment {
     @Override
     public void commandOnLinePayment() {
@@ -20,70 +23,62 @@ public class PaymentAndroid extends Payment {
 
     @Override
     public void commandBankCardPayment() {
-        String xpathTemporaire = "//*[@id=\"pl-pmLayout-column-pmContainer-1234567-28\"]/div[1]";
-        AndroidDriver driver = (AndroidDriver) ((WebDriverFacade)getDriver()).getProxiedDriver();
         withTimeoutOf(20,TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='pl-card-logos']//span[@class='pl-card-logo pl-visa']")));
-        WebElement benefitsValidate = driver.findElement(By.xpath("//div[@class='pl-card-logos']//span[@class='pl-card-logo pl-visa']"));
+        WebElement benefitsValidate = getDriver().findElement(By.xpath("//div[@class='pl-card-logos']//span[@class='pl-card-logo pl-visa']"));
         benefitsValidate.click();
     }
 
     @Override
     public void fillBankCardInformation(String numero, String date, String code) {
-        AndroidDriver driver = (AndroidDriver) ((WebDriverFacade)getDriver()).getProxiedDriver();
-        System.out.println("contexte paiment => " + driver.getCurrentUrl());
-        driver.switchTo().frame(driver.findElement(By.xpath("//*[@id=\"pl-pm-cards_8-cardNumber\"]")));
+        System.out.println("url paiment => " + getDriver().getCurrentUrl());
+        getDriver().switchTo().frame(getDriver().findElement(By.xpath("//*[@id=\"pl-pm-cards_8-cardNumber\"]")));
 
         withTimeoutOf(20,TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"PaylineWidgetIframe\"]/input")));
 
-        WebElement firstName = driver.findElement(By.xpath("//*[@id=\"PaylineWidgetIframe\"]/input"));
+        WebElement firstName = getDriver().findElement(By.xpath("//*[@id=\"PaylineWidgetIframe\"]/input"));
         firstName.click();
         firstName.clear();
         firstName.sendKeys(numero);
 
-        driver.switchTo().defaultContent();
-        WebElement lastName = driver.findElement(By.xpath("//*[@id=\"pl-pm-cards_8-expirationDate\"]"));
+        getDriver().switchTo().defaultContent();
+        WebElement lastName = getDriver().findElement(By.xpath("//*[@id=\"pl-pm-cards_8-expirationDate\"]"));
         lastName.click();
         lastName.clear();
         lastName.sendKeys(date);
 
-        driver.switchTo().frame(driver.findElement(By.xpath("//*[@id=\"pl-pm-cards_8-cvv\"]")));
-        WebElement emailMap = driver.findElement(By.xpath("//*[@id=\"PaylineWidgetIframe\"]/input"));
+        getDriver().switchTo().frame(getDriver().findElement(By.xpath("//*[@id=\"pl-pm-cards_8-cvv\"]")));
+        WebElement emailMap = getDriver().findElement(By.xpath("//*[@id=\"PaylineWidgetIframe\"]/input"));
         emailMap.click();
         emailMap.clear();
         emailMap.sendKeys(code);
-        driver.switchTo().defaultContent();
-        System.out.println("---------------->" + driver.getCurrentUrl());
+        getDriver().switchTo().defaultContent();
+        System.out.println("---------------->" + getDriver().getCurrentUrl());
     }
 
     @Override
     public void validatePayment() {
-        AndroidDriver driver = (AndroidDriver) ((WebDriverFacade)getDriver()).getProxiedDriver();
-        WebElement validate = driver.findElement(By.xpath("//*[@id=\"pl-pm-cards_8-payBtn\"]"));
-        System.out.println("---------------->" + driver.getCurrentUrl());
+        WebElement validate = getDriver().findElement(By.xpath("//*[@id=\"pl-pm-cards_8-payBtn\"]"));
         validate.click();
         waitABit(5000);
     }
 
     @Override
     public void kiabiStorePayment() {
-        AndroidDriver driver = (AndroidDriver) ((WebDriverFacade)getDriver()).getProxiedDriver();
-        WebElement validate = driver.findElement(By.xpath("//*[@id=\"eresa\"]"));
+        WebElement validate = getDriver().findElement(By.xpath("//*[@id=\"eresa\"]"));
         validate.click();
         waitABit(5000);
     }
 
     @Override
     public void insertCodeCaptcha() {
-        AndroidDriver driver = (AndroidDriver) ((WebDriverFacade)getDriver()).getProxiedDriver();
-        WebElement validate = driver.findElement(By.xpath("//*[@id=\"kaptchaEresa\"]"));
+        WebElement validate = getDriver().findElement(By.xpath("//*[@id=\"kaptchaEresa\"]"));
         validate.click();
         validate.sendKeys("12345");
     }
 
     @Override
     public void validateEReservation() {
-        AndroidDriver driver = (AndroidDriver) ((WebDriverFacade)getDriver()).getProxiedDriver();
-        WebElement validate = driver.findElement(By.xpath("//*[@id=\"paymentEresaValidate\"]"));
+        WebElement validate = getDriver().findElement(By.xpath("//*[@id=\"paymentEresaValidate\"]"));
         validate.click();
         waitABit(5000);
     }

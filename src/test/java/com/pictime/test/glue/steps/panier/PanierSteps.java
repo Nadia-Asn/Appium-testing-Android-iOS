@@ -11,8 +11,6 @@ public class PanierSteps extends TechnicalSteps {
 
     private static final long serialVersionUID = 8719348179721640957L;
 
-
-
     /**
      * Recherche un produit
      *

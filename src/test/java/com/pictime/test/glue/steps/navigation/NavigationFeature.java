@@ -5,6 +5,9 @@ import cucumber.api.java.fr.Lorsque;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.Steps;
 
+/**
+ * Definit les steps fonctionnels de la gestion de navigation à partir de la Home page
+ */
 public class NavigationFeature {
 
     @Steps

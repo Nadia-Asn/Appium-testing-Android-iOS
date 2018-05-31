@@ -12,6 +12,9 @@ import com.pictime.test.pages.utils.Contexte;
 import io.appium.java_client.android.AndroidDriver;
 import net.thucydides.core.webdriver.WebDriverFacade;
 
+/**
+ * Created by ahassounin
+ */
 public class PanierPageAndroid extends PanierPage{
 
 	private static String productName;

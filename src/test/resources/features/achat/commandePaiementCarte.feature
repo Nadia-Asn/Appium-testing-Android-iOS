@@ -36,3 +36,34 @@ Fonctionnalité: Achat d'un produit via l'application kiabi
     Et je valide  mon paiement
     Alors la confirmation de ma commande est affichee
 
+
+       ##################### Livraison en point relais - Paiement en magasin ############################
+
+  @commandeRelais
+  Scénario: Passer une commande en livraison en point relais et paiement en
+    Soit un client sur lapplication Kiabi
+    Lorsque je passe le tutoriel
+    Et je choisis la première collection sur la page d'accueil
+    Et je clique sur le premier produit dans la liste des produits
+    Et j'ajoute ce produit dans mon panier
+    Et je consulte mon panier
+    Et je choisis de continuer ma commander
+    Et je choisis de continuer sans compte client
+    Et je choisis la livraison en point relais
+    Et je choisis de localiser les points de retraits à proximite
+    Et je selectionne un point relais valide parmi les suggestions
+    Et je valide mon choix
+    Et je renseigne mes informations de contact
+      | FName        | LName          | email                           | tel         |
+      | nadia        | ahassouni      | nadia.ahassouni@pictime.com     | 0636363636  |
+    Et je valide mes informations de contact
+    Et je ne demande pas de carte de fidelite
+    Et je valide mes avantages et fidelite
+    Et je choisis de payer en ligne
+    Et je choisis de payer par carte bancaire
+    Et je renseigne les informations de ma carte bancaire
+      | numero               |  date    | code |
+      | 4444333322221111     |  0220    | 254  |
+    Et je valide  mon paiement
+    Alors la confirmation de ma commande est affichee
+

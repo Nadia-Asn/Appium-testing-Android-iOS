@@ -13,6 +13,9 @@ import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertNotEquals;
 
+/**
+ * Created by ahassounin
+ */
 public class AccountCreationPageAndroid extends AccountCreationPage {
 
     @Override
@@ -20,17 +23,16 @@ public class AccountCreationPageAndroid extends AccountCreationPage {
         AndroidDriver driver = (AndroidDriver) ((WebDriverFacade)getDriver()).getProxiedDriver();
         TouchAction action = new TouchAction(driver);
 
-        action.tap(driver.findElement(By.id("com.pictime.kiabi.activity:id/myaccount_welcome"))).perform();
+        driver.findElement(By.id("com.pictime.kiabi.activity:id/myaccount_welcome")).click();
 
         waitABit(5000);
-        action.tap(driver.findElement(By.id("com.pictime.kiabi.activity:id/btn_creer"))).perform();
+        driver.findElement(By.id("com.pictime.kiabi.activity:id/btn_creer")).click();
     }
 
     @Override
     public void fillAccountInformation(String prenom, String nom, String email, String password, String code) {
 
         AndroidDriver driver = (AndroidDriver) ((WebDriverFacade)getDriver()).getProxiedDriver();
-        TouchAction action = new TouchAction(driver);
         Contexte.switchToWebview(driver, "sign");
         withTimeoutOf(20,TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"title\"]")));
         driver.findElement(By.xpath("//*[@id=\"title\"]")).click();

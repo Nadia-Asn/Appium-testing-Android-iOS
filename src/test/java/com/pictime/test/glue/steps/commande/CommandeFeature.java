@@ -8,6 +8,9 @@ import net.thucydides.core.annotations.Steps;
 
 import java.util.Map;
 
+/**
+ * Definit les steps fonctionnels de la gestion de tunnel de commande sur Kiabi
+ */
 public class CommandeFeature {
 
     @Steps

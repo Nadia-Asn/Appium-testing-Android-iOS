@@ -2,6 +2,9 @@ package com.pictime.test.pages.commande.delivery;
 
 import net.serenitybdd.core.pages.PageObject;
 
+/**
+ * Created by ahassounin
+ */
 public abstract class Delivery extends PageObject {
 
     public abstract void deliveryTypeHome();

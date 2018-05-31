@@ -8,6 +8,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Created by ahassounin
+ */
 public class PaymentIOS extends Payment {
     @Override
     public void commandOnLinePayment() {
@@ -19,38 +22,31 @@ public class PaymentIOS extends Payment {
 
     @Override
     public void commandBankCardPayment() {
-        String xpathTemporaire = "//*[@id=\"pl-pmLayout-column-pmContainer-1234567-28\"]/div[1]";
-        IOSDriver driver = (IOSDriver) ((WebDriverFacade)getDriver()).getProxiedDriver();
         withTimeoutOf(20,TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='pl-card-logos']//span[@class='pl-card-logo pl-visa']")));
-        WebElement benefitsValidate = driver.findElement(By.xpath("//div[@class='pl-card-logos']//span[@class='pl-card-logo pl-visa']"));
+        WebElement benefitsValidate = getDriver().findElement(By.xpath("//div[@class='pl-card-logos']//span[@class='pl-card-logo pl-visa']"));
         benefitsValidate.click();
     }
 
     @Override
     public void fillBankCardInformation(String numero, String date, String code) {
-        IOSDriver driver = (IOSDriver) ((WebDriverFacade)getDriver()).getProxiedDriver();
-
-        driver.switchTo().frame(driver.findElement(By.xpath("//*[@id=\"pl-pm-cards_7-cardNumber\"]")));
+        getDriver().switchTo().frame(getDriver().findElement(By.xpath("//*[@id=\"pl-pm-cards_7-cardNumber\"]")));
 
         withTimeoutOf(20,TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"PaylineWidgetIframe\"]/input")));
 
-        WebElement firstName = driver.findElement(By.xpath("//*[@id=\"firstName\"]"));
+        WebElement firstName = getDriver().findElement(By.xpath("//*[@id=\"firstName\"]"));
         firstName.click();
         firstName.clear();
         firstName.sendKeys(numero);
 
-        WebElement lastName = driver.findElement(By.xpath("//*[@id=\"pl-pm-cards_7-expirationDate\"]"));
+        WebElement lastName = getDriver().findElement(By.xpath("//*[@id=\"pl-pm-cards_7-expirationDate\"]"));
         lastName.click();
         lastName.clear();
         lastName.sendKeys(date);
 
-        WebElement emailMap = driver.findElement(By.xpath("//*[@id=\"PaylineWidgetIframe\"]/input"));
+        WebElement emailMap = getDriver().findElement(By.xpath("//*[@id=\"PaylineWidgetIframe\"]/input"));
         emailMap.click();
         emailMap.clear();
         emailMap.sendKeys(code);
-
-
-
     }
 
     @Override

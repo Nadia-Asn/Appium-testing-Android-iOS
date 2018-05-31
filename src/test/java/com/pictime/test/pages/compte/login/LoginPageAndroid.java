@@ -21,7 +21,7 @@ public class LoginPageAndroid extends LoginPage {
         //Click in "meConnecter"
         AndroidDriver driver = (AndroidDriver) ((WebDriverFacade)getDriver()).getProxiedDriver();
         TouchAction action = new TouchAction(driver);
-        action.tap(driver.findElement(By.id("com.pictime.kiabi.activity:id/myaccount_welcome"))).perform();
+        driver.findElement(By.id("com.pictime.kiabi.activity:id/myaccount_welcome")).click();
 
         // Enter email
         withTimeoutOf(20, TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated(By.id("com.pictime.kiabi.activity:id/login")));
@@ -30,7 +30,7 @@ public class LoginPageAndroid extends LoginPage {
 
         //Enter password
         find(By.id("com.pictime.kiabi.activity:id/mdp")).clear();
-        getDriver().findElement(By.id("com.pictime.kiabi.activity:id/mdp")).sendKeys(password+"\n\n");
+        getDriver().findElement(By.id("com.pictime.kiabi.activity:id/mdp")).sendKeys(password);
     }
 
     @Override
